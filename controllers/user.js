@@ -1,5 +1,4 @@
 const express = require("express");
-const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const { verifyToken } = require("./../helper");
 const router = express.Router();
