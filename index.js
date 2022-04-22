@@ -1,9 +1,8 @@
 require("dotenv").config();
 const express = require("express");
-// const mysql = require("mysql");
-const user = require("./controllers/user");
+const user = require("./src/controllers/user");
 const app = express();
-const db = require("./data/models/index");
+const db = require("./src/data/models/index");
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -17,13 +16,12 @@ db.sequelize
   })
   .catch((err) => {
     console.error("Unable to connect to the database:", err);
-    33;
   });
 
 const PORT = process.env.PORT || 8080;
 
-app.get("/v1/", (req, res) => {
-  res.json({ Response: "Hello World!" });
+app.get("/v1/", (_, res) => {
+  res.json({ Response: "It's working" });
 });
 
 app.use("/v1/user", user);
