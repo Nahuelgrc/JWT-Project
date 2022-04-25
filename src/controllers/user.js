@@ -11,9 +11,6 @@ router.post(
   schemaValidator(schemas.registerAndLoginSchema),
   async (req, res) => {
     const { username, password, repassword } = req.body;
-    console.log("🚀 ~ file: user.js ~ line 14 ~ repassword", repassword)
-    console.log("🚀 ~ file: user.js ~ line 14 ~ password", password)
-    console.log("🚀 ~ file: user.js ~ line 14 ~ username", username)
 
     res.json();
   }
